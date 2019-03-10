@@ -26,6 +26,16 @@ $(document).ready(function() {
     });
   });
 
+  $(document).on("click", "#article-delete", function() {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/articles"
+    }).then(data => {
+      console.log(data);
+      window.location.href = "/";
+    });
+  });
+
   $(document).on("click", ".add-note", function() {
     const articleId = $(this).attr("data-id");
     $("#modal-id").text("Add note for article: " + articleId);

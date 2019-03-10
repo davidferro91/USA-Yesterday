@@ -87,7 +87,7 @@ module.exports = app => {
   app.post("/api/articles/:id", (req, res) => {
     // Create a new note and pass the req.body to the entry
     db.Note.create(req.body)
-      .then(dbNote => db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { notes: dbNote._id } }, { new: true }))
+      .then(dbNote => db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { notes: dbNote._id }, saved: true }, { new: true }))
       .then(dbArticle => res.json(dbArticle))
       .catch(err => res.json(err));
   });
@@ -110,6 +110,13 @@ module.exports = app => {
   app.delete("/api/notes/:id", (req, res) => {
     db.Note.deleteOne({ _id: req.params.id })
       .then(dbNote => res.json(dbNote))
+      .catch(err => res.json(err));
+  });
+
+  // Route for deleting articles
+  app.delete("/api/articles", (req, res) => {
+    db.Article.deleteMany({ saved: false })
+      .then(dbArticle => res.json(dbArticle))
       .catch(err => res.json(err));
   });
 };

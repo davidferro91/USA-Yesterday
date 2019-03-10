@@ -3,6 +3,16 @@ $(document).ready(function() {
 
   $('.modal').modal();
 
+  const scraper = () => {
+    $.ajax({
+      method: "GET",
+      url: "/api/scrape"
+    }).then(data => {
+      console.log(data);
+      setTimeout(window.location.href = "/", 3000);
+    });
+  }
+
   $(document).on("click", ".save-button", function() {
     const articleId = $(this).attr("data-id");
     let queryURL = "/api/articles/" + articleId;
@@ -17,9 +27,13 @@ $(document).ready(function() {
   });
 
   $(document).on("click", "#scrape-link", function() {
+    scraper();
+  });
+
+  $(document).on("click", "#article-delete", function() {
     $.ajax({
-      method: "GET",
-      url: "/api/scrape"
+      method: "DELETE",
+      url: "/api/articles"
     }).then(data => {
       console.log(data);
       window.location.href = "/";

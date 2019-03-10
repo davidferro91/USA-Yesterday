@@ -7,6 +7,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/saved-articles">Saved Articles</a></li>
         <li><a id="scrape-link" href="/">Scrape New Articles</a></li>
+        <li><a id="article-delete" href="/">Delete Unsaved Articles</a></li>
       </ul>
     </div>
   </div>
@@ -16,6 +17,7 @@
   <li><a href="/">Home</a></li>
   <li><a href="/saved-articles">Saved Articles</a></li>
   <li><a id="scrape-link" href="/">Scrape New Articles</a></li>
+  <li><a id="article-delete" href="/">Delete Unsaved Articles</a></li>
 </ul>
 
 <main class="container">
@@ -44,13 +46,12 @@
             href="#note-modal" data-id={{_id}}>Add
             Note</button>
           <a class="waves-effect waves-light btn orange darken-3 white-text read-note" href="/articles/{{_id}}"
-            data-id={{_id}}>Read Notes</a>
+            data-id={{_id}}>See Notes</a>
         </div>
         <div class="card-action">
-          <button class="waves-effect waves-light btn orange darken-3 white-text save-button" data-id={{_id}}>Unsave
-            Article</button>
+          <button class="waves-effect waves-light btn orange darken-3 white-text save-button" data-id={{_id}}>Unsave</button>
           <button class="waves-effect waves-light btn orange darken-3" href="{{link}}" target="_blank"
-            class="white-text">Read Article</button>
+            class="white-text">Read</button>
         </div>
       </div>
     </div>
