@@ -22,7 +22,7 @@ $(document).ready(function() {
       url: queryURL
     }).then((data) => {
       console.log(data);
-      window.location.href = "/saved-articles";
+      window.location.href = "/";
     });
   });
 
