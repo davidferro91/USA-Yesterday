@@ -9,3 +9,9 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.image-holder {
+  overflow: hidden;
+  max-height: 250px;
+  max-width: auto;
+}

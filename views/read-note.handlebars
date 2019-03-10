@@ -23,7 +23,7 @@
     <div class="col s12">
       <div class="card grey lighten-2 z-depth-5">
         <div class="card-content">
-          <h3><i class="material-icons medium hide-on-small-only">brightness_3</i>USA Yesterday Article Scraper</h3>
+          <h3><i class="material-icons medium hide-on-small-only">brightness_3</i>USA Yesterday Notes for Article</h3>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
 
   <div class="row">
     {{#each Article}}
-    <div class="col s12 m6 l4">
+    <div class="col s12">
       <div class="card">
         <div class="card-image image-holder">
           <img class="responsive-img" src="{{imageUrl}}" alt="{{title}}">
@@ -40,11 +40,15 @@
         <div class="card-content">
           <span class="card-title black-text">{{title}}</span>
           <blockquote>{{summary}}</blockquote>
+          <h4>Notes:</h4>
+          {{#each notes}}
+            <h5>{{title}}</h5>
+            <blockquote>{{body}}</blockquote>
+            <button class="waves-effect waves-light btn red darken-3 white-text delete-note" data-id={{_id}}>Delete</button>
+          {{/each}}
           <button class="waves-effect waves-light btn orange darken-3 white-text add-note modal-trigger"
             href="#note-modal" data-id={{_id}}>Add
             Note</button>
-          <a class="waves-effect waves-light btn orange darken-3 white-text read-note" href="/articles/{{_id}}"
-            data-id={{_id}}>Read Notes</a>
         </div>
         <div class="card-action">
           <button class="waves-effect waves-light btn orange darken-3 white-text save-button" data-id={{_id}}>Save
@@ -100,4 +104,4 @@
   </div>
 </footer>
 <script type="text/javascript" src="/assets/javascript/materialize.min.js"></script>
-<script type="text/javascript" src="/assets/javascript/home.js"></script>
+<script type="text/javascript" src="/assets/javascript/read.js"></script>

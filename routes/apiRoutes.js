@@ -54,7 +54,7 @@ module.exports = app => {
       });
 
       // Send a message to the client
-      res.send("Scrape Complete");
+      res.json({msg:"Scrape Complete"});
     });
   });
 
@@ -109,6 +109,7 @@ module.exports = app => {
   // Route for deleting notes
   app.delete("/api/notes/:id", (req, res) => {
     db.Note.deleteOne({ _id: req.params.id })
+      .then(dbNote => res.json(dbNote))
       .catch(err => res.json(err));
   });
 };

@@ -1,213 +1,103 @@
 <nav>
-  <div class="nav-wrapper blue">
+  <div class="nav-wrapper orange darken-3">
     <div class="container">
-      <a href="/" class="brand-logo">David Ferro</a>
+      <a href="/" class="brand-logo"><i class="material-icons hide-on-small-only">brightness_3</i>USA Yesterday</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/saved-articles">Saved Articles</a></li>
+        <li><a id="scrape-link" href="/">Scrape New Articles</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="/">About</a></li>
-  <li><a href="/portfolio">Portfolio</a></li>
-  <li><a href="/contact">Contact</a></li>
-  <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/saved-articles">Saved Articles</a></li>
+  <li><a id="scrape-link" href="/">Scrape New Articles</a></li>
 </ul>
 
-<main>
-  <br>
-  <br>
-  <div class="container blue lighten-5">
-    <div class="row z-depth-5">
-      <div class="section blue-text col s12">
-        <h4 class="center-align"><b> Portfolio</b></h4>
-        <div class="divider"></div>
-      </div>
-
-      <div class="col s12">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/firefighters.png" alt="Fire Fighters">
-                <span class="card-title blue"><a href="https://firefightersfriend.herokuapp.com/" target="_blank"
-                    class="white-text"><b>Firefighter's Friend</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/firefightersfriend" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/eatdaburger.png" alt="Eat The Burger Image">
-                <span class="card-title blue"><a href="https://burger-sequelize91.herokuapp.com/" target="_blank"
-                    class="white-text"><b>Eat Da Burger!</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/burger-sequelize" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/FriendZone.png" alt="Friend Zone">
-                <span class="card-title blue"><a href="https://friendzone91.herokuapp.com/" target="_blank"
-                    class="white-text"><b>FriendZone (Friend Matching App)</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/FriendFinder" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-up-left" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/Cleveland.jpg" alt="Night On the Town">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/GroupProject1/" target="_blank"
-                    class="white-text"><b>Night on the Town</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/GroupProject1" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/Trivia.jpg" alt="Trivia">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/TriviaGame" target="_blank"
-                    class="white-text"><b>TriviaQ</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/TriviaGame" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-up-right" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/Hangman.jpg" alt="Word Guess Game">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/Word-Guess-Game/" target="_blank"
-                    class="white-text"><b>Word Guess Game</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/Word-Guess-Game" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/RPG.jpg" alt="Star Wars RPG">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/Star-Wars-RPG/" target="_blank"
-                    class="white-text"><b>Star Wars RPG</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/Star-Wars-RPG" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/train.jpg" alt="Gif">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/Train-Scheduler/" target="_blank"
-                    class="white-text"><b>Train Scheduler</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/Train-Scheduler" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/with-the-beatles.jpg" alt="Beatles Word Guess">
-                <span class="card-title blue"><a href="https://github.com/davidferro91/Word-Guess-CLI" target="_blank"
-                    class="white-text"><b>Word Guess CLI (Beatles Themed)</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/Word-Guess-CLI" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="fade-up-left" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/movie-this.png" alt="LIRI-Bot">
-                <span class="card-title blue"><a href="https://github.com/davidferro91/LIRI-Bot" target="_blank"
-                    class="white-text"><b>LIRI-Bot</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/LIRI-Bot" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom" data-aos-delay="250" data-aos-duration="1500">
-              <div class="card-image">
-                <img src="/assets/images/giphy3.gif" alt="Gif">
-                <span class="card-title blue"><a href="https://davidferro91.github.io/GifTastic/" target="_blank"
-                    class="white-text"><b>GifTastic</b></a></span>
-              </div>
-              <div class="card-action">
-                <a class="black-text" href="https://github.com/davidferro91/GifTastic" target="_blank"><b>Code on
-                    GitHub</b></a>
-              </div>
-            </div>
-          </div>
-
+<main class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card grey lighten-2 z-depth-5">
+        <div class="card-content">
+          <h3><i class="material-icons medium hide-on-small-only">brightness_3</i>USA Yesterday Saved Articles</h3>
         </div>
       </div>
     </div>
   </div>
+  <br>
+
+  <div class="row">
+    {{#each Article}}
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image image-holder">
+          <img class="responsive-img" src="{{imageUrl}}" alt="{{title}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title black-text">{{title}}</span>
+          <blockquote>{{summary}}</blockquote>
+          <button class="waves-effect waves-light btn orange darken-3 white-text add-note modal-trigger"
+            href="#note-modal" data-id={{_id}}>Add
+            Note</button>
+          <a class="waves-effect waves-light btn orange darken-3 white-text read-note" href="/articles/{{_id}}"
+            data-id={{_id}}>Read Notes</a>
+        </div>
+        <div class="card-action">
+          <button class="waves-effect waves-light btn orange darken-3 white-text save-button" data-id={{_id}}>Unsave
+            Article</button>
+          <button class="waves-effect waves-light btn orange darken-3" href="{{link}}" target="_blank"
+            class="white-text">Read Article</button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <div id="note-modal" class="modal">
+    <div class="modal-content">
+      <h4 id="modal-id"></h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="note-title" type="text">
+              <label for="note-title">Note Title:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="note-body" type="text">
+              <label for="note-body">Note Body:</label>
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light modal-close" id="modal-submit" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
 </main>
 
-<footer class="page-footer blue">
+<footer class="page-footer orange darken-3">
   <div class="footer-copyright">
     <div class="container">
       <div class="grey-text text-lighten-4 left">
-        © 2018-2019 David Ferro
+        USA-Yesterday Article Scraper
       </div>
       <div class="right">
-        <a class="grey-text text-lighten-3" href="https://github.com/davidferro91" target="_blank"><i
-            class="fab fa-github"></i> Github</a>
-        <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/davidferro91/" target="_blank"><i
-            class="fab fa-linkedin"></i> LinkedIn</a>
+        <a class="grey-text text-lighten-3" href="https://www.usatoday.com/" target="_blank"><i
+            class="fas fa-circle"></i> USA Today</a>
       </div>
     </div>
   </div>
 </footer>
-<script type="text/javascript" src="/assets/js/materialize.min.js"></script>
-<script type="text/javascript" src="/assets/js/about.js"></script>
-<script>AOS.init();</script>
+<script type="text/javascript" src="/assets/javascript/materialize.min.js"></script>
+<script type="text/javascript" src="/assets/javascript/saved.js"></script>
