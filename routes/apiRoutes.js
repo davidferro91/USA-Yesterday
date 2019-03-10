@@ -15,7 +15,7 @@ module.exports = app => {
         // Save an empty result object
         const result = {};
 
-        // Add the text and href of every link, and save them as properties of the result object
+        // Add the title, href, summary, and imageUrl, after checking that they exist (i.e. are not undefined) of every link, and save them as properties of the result object
         let unsplitUrl = $(element)
           .children("span.hgpm-grid-wrap")
           .children("img.hgpm-image")
@@ -56,6 +56,31 @@ module.exports = app => {
       // Send a message to the client
       res.send("Scrape Complete");
     });
+  });
+
+  // Route for getting all Articles from the db
+  app.get("/api/articles", (req, res) => {
+    // Grab every document in the Articles collection
+    db.Article.find({})
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
+  });
+
+  app.get("/api/articles/:id", (req, res) => {
+    // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+    db.Article.findOne({ _id: req.params.id })
+      // ..and populate all of the notes associated with it
+      .populate("notes")
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
+  });
+
+  app.post("/api/articles/:id", (req, res) => {
+    // Create a new note and pass the req.body to the entry
+    db.Note.create(req.body)
+      .then(dbNote => db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true }))
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
   });
 
 };
