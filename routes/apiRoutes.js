@@ -3,14 +3,14 @@ const cheerio = require("cheerio");
 
 const db = require("../models");
 module.exports = app => {
-  // A GET route for scraping the echoJS website
+  // A GET route for scraping the USA-Today website
   app.get("/api/scrape", (req, res) => {
     // First, we grab the body of the html with axios
     axios.get("https://www.usatoday.com/news/").then(response => {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       const $ = cheerio.load(response.data);
 
-      // Now, we grab every h2 within an article tag, and do the following:
+      // Now, we grab every .hgpm-link class, and do the following:
       $(".hgpm-link").each((i, element) => {
         // Save an empty result object
         const result = {};
@@ -66,6 +66,14 @@ module.exports = app => {
       .catch(err => res.json(err));
   });
 
+  // Route for getting all saved articles from the db
+  app.get("/api/saved-articles", (req, res) => {
+    db.Article.find({ saved: true })
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
+  });
+
+  // Route for finding one article by id, populated with notes
   app.get("/api/articles/:id", (req, res) => {
     // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
     db.Article.findOne({ _id: req.params.id })
@@ -75,12 +83,32 @@ module.exports = app => {
       .catch(err => res.json(err));
   });
 
+  // Route for posting notes to articles
   app.post("/api/articles/:id", (req, res) => {
     // Create a new note and pass the req.body to the entry
     db.Note.create(req.body)
-      .then(dbNote => db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true }))
+      .then(dbNote => db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { notes: dbNote._id } }, { new: true }))
       .then(dbArticle => res.json(dbArticle))
       .catch(err => res.json(err));
   });
 
+  // Route for updating an article to being saved
+  app.put("/api/articles/:id", (req, res) => {
+    db.Article.findOneAndUpdate({ _id: req.params.id }, { saved: true }, { new: true })
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
+  });
+
+  // Route for updating an article to being not saved
+  app.put("/api/saved-articles/:id", (req, res) => {
+    db.Article.findOneAndUpdate({ _id: req.params.id }, { saved: false }, { new: true })
+      .then(dbArticle => res.json(dbArticle))
+      .catch(err => res.json(err));
+  });
+
+  // Route for deleting notes
+  app.delete("/api/notes/:id", (req, res) => {
+    db.Note.deleteOne({ _id: req.params.id })
+      .catch(err => res.json(err));
+  });
 };

@@ -9,12 +9,14 @@ const ArticleSchema = new Schema({
   // `title` is required and of type String
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   // `link` is required and of type String
   link: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   // `summary` is required and of type String
   summary: {
@@ -25,6 +27,11 @@ const ArticleSchema = new Schema({
   imageUrl: {
     type: String,
     required: true
+  },
+  saved: {
+    type: Boolean,
+    required: true,
+    default: false
   },
   // `notes` is an array that stores a Note id
   // The ref property links the ObjectId to the Note model
