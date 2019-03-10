@@ -22,7 +22,7 @@ $(document).ready(function() {
       url: "/api/scrape"
     }).then(data => {
       console.log(data);
-      window.location.href = "/";
+      setTimeout(window.location.href = "/", 3000);
     });
   });
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
       url: "/api/articles"
     }).then(data => {
       console.log(data);
-      window.location.href = "/";
+      setTimeout(window.location.href = "/", 3000);
     });
   });
 

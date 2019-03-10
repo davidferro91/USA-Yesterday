@@ -3,16 +3,6 @@ $(document).ready(function() {
 
   $('.modal').modal();
 
-  const scraper = () => {
-    $.ajax({
-      method: "GET",
-      url: "/api/scrape"
-    }).then(data => {
-      console.log(data);
-      setTimeout(window.location.href = "/", 3000);
-    });
-  }
-
   $(document).on("click", ".save-button", function() {
     const articleId = $(this).attr("data-id");
     let queryURL = "/api/articles/" + articleId;
@@ -27,7 +17,13 @@ $(document).ready(function() {
   });
 
   $(document).on("click", "#scrape-link", function() {
-    scraper();
+    $.ajax({
+      method: "GET",
+      url: "/api/scrape"
+    }).then(data => {
+      console.log(data);
+      setTimeout(window.location.href = "/", 3000);
+    });
   });
 
   $(document).on("click", "#article-delete", function() {
@@ -36,7 +32,7 @@ $(document).ready(function() {
       url: "/api/articles"
     }).then(data => {
       console.log(data);
-      window.location.href = "/";
+      setTimeout(window.location.href = "/", 3000);
     });
   });
 
