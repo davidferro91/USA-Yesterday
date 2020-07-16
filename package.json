@@ -23,7 +23,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
     "handlebars": "^4.5.3",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "mongoose": "^5.8.3",
     "morgan": "^1.9.1"
   }
